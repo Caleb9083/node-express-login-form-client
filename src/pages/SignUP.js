@@ -1,6 +1,7 @@
+import "./styles/SignUp.css";
 import React, { useState } from "react";
 
-const SignUP = () => {
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -32,4 +33,4 @@ const SignUP = () => {
   );
 };
 
-export default SignUP;
+export default SignUp;

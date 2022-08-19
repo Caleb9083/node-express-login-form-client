@@ -1,3 +1,4 @@
+import "./styles/Navbar.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -6,7 +7,7 @@ const Navbar = () => {
     <header>
       <div className="container">
         <Link to="/">
-          <h1>Workout Buddy</h1>
+          <h1>TopMovies</h1>
         </Link>
         <nav>
           <div>
