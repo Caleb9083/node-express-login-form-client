@@ -4,11 +4,30 @@ import React, { useState } from "react";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [dataToDisplay, setDataToDisplay] = useState(null);
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
     console.log(email, password);
+
+    const data = { email: email, password: password };
+
+    fetch("http://localhost:1111/signup", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        setDataToDisplay(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
@@ -29,6 +48,12 @@ const Login = () => {
         />
         <button>Login</button>
       </form>
+      <div className="response">
+        {dataToDisplay &&
+          dataToDisplay.map((el, key) => {
+            return <li key={key}>{el.email}</li>;
+          })}
+      </div>
     </div>
   );
 };

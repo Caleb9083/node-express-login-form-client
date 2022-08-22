@@ -10,3 +10,9 @@ form.login{
 button{
     width: 30%;
 }
+
+.response{
+    height: 300px;
+    width: 100%;
+    background-color: rgb(194, 201, 201);
+}
