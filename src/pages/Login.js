@@ -13,7 +13,7 @@ const Login = () => {
 
     const data = { email: email, password: password };
 
-    fetch("http://localhost:1111/signup", {
+    fetch("https://node-express-login-form.herokuapp.com/signup", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
